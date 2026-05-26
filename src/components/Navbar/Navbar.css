@@ -1,0 +1,390 @@
+/* --- Core Styling & Reset Setup --- */
+.mx-navbar {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 0 4%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Brand Typography Section --- */
+.nav-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.amazon-logo {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.divider {
+  margin: 0 6px;
+  color: #555;
+  font-size: 16px;
+}
+
+.mx-logo {
+  font-weight: 900;
+  font-size: 16px;
+  background: linear-gradient(90deg, #2196f3, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-home-icon {
+  color: #2196f3;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* --- Navigation Links --- */
+.nav-links-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  margin-left: 35px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a.active, 
+.nav-links li a:hover {
+  color: #ffffff;
+}
+
+/* --- Tablet Interactive Click Dropdown --- */
+.tablet-dropdown {
+  display: none;
+  position: relative;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 0;
+  user-select: none;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 4px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  min-width: 140px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  display: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #222;
+}
+
+/* Active Class states driven cleanly by React State */
+.tablet-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.tablet-dropdown.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+/* --- Interface Actions --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.login-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mobile-profile {
+  display: none;
+}
+
+/* --- Global Search Overlay Component --- */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 230px;
+  background-color: #111111;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 8% 20px 8%;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.search-overlay.search-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 0 16px;
+  height: 52px;
+}
+
+.search-bar-icon {
+  color: #888888;
+  margin-right: 12px;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #666666;
+}
+
+.mic-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.close-search-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.search-categories {
+  display: flex;
+  gap: 16px;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 600px;
+  align-self: center;
+}
+
+.category-card {
+  flex: 1;
+  height: 46px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.category-card.web-shows { background: linear-gradient(135deg, #4a0072, #7b1fa2); }
+.category-card.movies { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+.category-card.mx-vdesi { background: linear-gradient(135deg, #004d40, #00796b); }
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet Optimization Layout (Collapses links into an intentional dropdown) */
+@media (max-width: 950px) {
+  .collapsible-link {
+    display: none;
+  }
+  .tablet-dropdown {
+    display: block;
+  }
+}
+
+/* Mobile Dual-Row Scrollable Layout (Flattens all links, allows full horizontal scroll) */
+@media (max-width: 600px) {
+  .mx-navbar {
+    height: 115px;
+    padding: 12px 16px;
+  }
+
+  .navbar-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    row-gap: 14px;
+    width: 100%;
+  }
+
+  /* Row 1 Layout */
+  .nav-brand-section {
+    grid-column: 1;
+    grid-row: 1;
+    gap: 0;
+  }
+  .nav-home-icon, 
+  .desktop-login, 
+  .tablet-dropdown {
+    display: none; /* Hide tablet dropdown entirely on phone layout */
+  }
+
+  .nav-actions {
+    grid-column: 3;
+    grid-row: 1;
+    gap: 16px;
+    justify-self: end;
+  }
+  .mobile-profile {
+    display: flex;
+  }
+
+  /* Row 2 Layout - The Smooth Touch Scrolling Bar containing ALL links */
+  .nav-links-container {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    margin-left: 0;
+    width: 100%;
+    
+    /* Horizontal touch scroll config */
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+  }
+
+  /* Hides scrollbars on Chrome, Safari, and new Edge browsers */
+  .nav-links-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .nav-links {
+    display: inline-flex; 
+    gap: 22px;
+    padding: 0 4px 4px 4px;
+  }
+
+  /* Force "New On Mx" and "Trailers" to re-appear uncollapsed in the mobile scroll line */
+  .nav-links .collapsible-link {
+    display: block;
+  }
+
+  .nav-links li a {
+    font-size: 14.5px;
+  }
+
+  /* Compact Search Overrides for Mobile */
+  .search-overlay {
+    height: auto;
+    padding: 16px 4%;
+  }
+  .search-bar-container { gap: 15px; }
+  .search-input-wrapper { height: 46px; }
+  .search-categories {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+  }
+  .category-card { height: 40px; }
+}

@@ -1,0 +1,398 @@
+/* --- Desktop Baseline Layout Framework --- */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  max-height: 800px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  margin-top: 75px; /* Offset alignment for fixed desktop navbar */
+}
+
+.slider-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.main-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% top;
+}
+
+/* Dual directional masking gradients matching live application visuals */
+.radial-dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 40%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.95) 85%),
+              linear-gradient(90deg, #000000 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px 6% 60px 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content-left {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.age-badge {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.tagline-text {
+  color: #00b0ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.meta-genres {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #cccccc;
+  margin-bottom: 16px;
+}
+
+.meta-genres span:first-child {
+  color: #ffb300; /* Distinct highlight tone for master display language */
+}
+
+.bullet-dot {
+  color: #666666;
+  font-size: 10px;
+}
+
+.series-description {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 28px 0;
+}
+
+/* --- CTA Component Engine --- */
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-ctas button {
+  height: 50px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  box-sizing: border-box;
+}
+
+.hero-ctas button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.btn-play {
+  background-color: #1976d2;
+  color: #ffffff;
+  padding: 0 36px;
+}
+
+.btn-info {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 0 26px;
+}
+
+.btn-add-list {
+  background: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14.5px;
+  padding: 0 16px;
+}
+
+/* Right Static Ecosystem Element */
+.device-promo-tag {
+  position: absolute;
+  top: 40px;
+  right: 6%;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.device-promo-tag span {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* --- Navigation / Pagination Architecture --- */
+.slider-controls-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pagination-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pagination-dots .active-dot {
+  background-color: #ffffff;
+  width: 22px;
+  border-radius: 4px;
+}
+
+.nav-arrows-group {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT SYSTEM OVERRIDES
+   ========================================================================== */
+
+/* Tablet View Adjustments */
+@media (max-width: 950px) {
+  .hero-slider {
+    height: 65vh;
+    min-height: 500px;
+  }
+  .main-title {
+    font-size: 46px;
+  }
+  .series-description {
+    font-size: 14px;
+    max-width: 90%;
+  }
+  .device-promo-tag {
+    display: none; /* Hide standard branding text on tablet block scales */
+  }
+}
+
+/* Mobile View Adjustments (Matches Screenshot 2 & 3 View) */
+@media (max-width: 600px) {
+  .hero-slider {
+    height: auto;
+    max-height: none;
+    margin-top: 115px; /* Offset margin alignment matched perfectly to 2-row mobile nav */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Structural Separation: Elevates Image to top section, Content flows natively below */
+  .slider-bg-wrapper {
+    position: relative;
+    width: 100%;
+    height: 56vw; /* Formats perfectly into a 16:9 banner canvas across mobile viewport scales */
+    min-height: 210px;
+  }
+
+  .main-bg-img {
+    object-position: center center; /* Shift framing straight to center action focus */
+  }
+
+  /* Modifies dark overlays to smoothly blend vertically downwards */
+  .radial-dark-overlay {
+    background: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+  }
+
+  .hero-container {
+    position: relative;
+    padding: 20px 16px 24px 16px;
+    background-color: #000000;
+  }
+
+  .hero-content-left {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Inline Metadata badge re-positioning */
+  .age-badge {
+    position: absolute;
+    top: -165px; /* Floats the age limit badge clean above title bounds inside banner workspace */
+    left: 16px;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .title-block {
+    margin-bottom: 10px;
+  }
+
+  .tagline-text {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .main-title {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .meta-genres {
+    font-size: 13px;
+    margin-bottom: 12px;
+    flex-wrap: wrap; /* Safely wraps overflow genre strings gracefully */
+    row-gap: 4px;
+  }
+
+  .series-description {
+    font-size: 13.5px;
+    line-height: 1.45;
+    margin-bottom: 22px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* CTA Transformation: Flat structured high-visibility interactive buttons */
+  .hero-ctas {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal play & info splitting columns */
+    row-gap: 12px;
+    column-gap: 10px;
+  }
+
+  .hero-ctas button {
+    height: 44px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .btn-play {
+    grid-column: 1;
+    padding: 0;
+    width: 100%;
+  }
+
+  .btn-info {
+    grid-column: 2;
+    padding: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Centered "Add to list" text block button spanning full bottom width layout */
+  .btn-add-list {
+    grid-column: 1 / span 2;
+    width: auto;
+    justify-self: center;
+    padding: 4px 0;
+    height: auto;
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  
+  .btn-add-list:hover {
+    transform: none;
+  }
+
+  /* Custom controls re-position block structure */
+  .slider-controls-wrapper {
+    position: relative;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #141414;
+    width: 100%;
+  }
+
+  .arrow-btn {
+    width: 38px;
+    height: 38px;
+  }
+}

@@ -1,0 +1,258 @@
+/* --- સેક્શન અને રો લેઆઉટ --- */
+.trending-section {
+  background-color: #000000;
+  padding: 25px 4% 10px 4%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.trending-header {
+  margin-bottom: 10px;
+}
+
+.trending-title {
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.title-chevron {
+  color: #00b0ff;
+}
+
+.cards-row-container {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 15px 0 45px 0; /* હોવર બોક્સ બહાર નીકળે તેના માટે સ્પેસ */
+  scrollbar-width: none;
+}
+
+.cards-row-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- કાર્ડ બેઝ સ્ટાઈલ --- */
+.show-card {
+  flex: 0 0 calc(14.28% - 12px);
+  min-width: 160px;
+  max-width: 190px;
+  position: relative;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.poster-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 2.8;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-status-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #ff1744;
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   MXPLAYER EXACT MATCH HOVER SYSTEM
+   ========================================================================== */
+.hover-preview-portal {
+  position: absolute;
+  /* કાર્ડની સેન્ટરમાંથી વાઇડ પોપ-અપ થશે */
+  top: -40px; 
+  left: -35px; 
+  width: 250px; /* ઓરિજિનલ જેવી ફિક્સ વાઇડ સાઇઝ */
+  z-index: 999;
+  background-color: #1a242d; /* ડાર્ક બ્લુઇશ ગ્રે જે MXPlayer માં છે */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+  
+  /* સ્મૂધ એનિમેશન */
+  transform-origin: center center;
+  animation: cardPopup 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes cardPopup {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* ઇમેજ વાઇડ બેનર જેવી દેખાવી જોઈએ, ક્રોપ ન થવી જોઈએ */
+.preview-media-banner {
+  position: relative;
+  width: 100%;
+  height: 135px; /* વાઇડ આસ્પેક્ટ રેશિયો */
+  background-color: #000;
+  overflow: hidden;
+}
+
+.preview-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* જેથી મોઢા કપાય નહીં અને ઇમેજનો ટોપ ભાગ સરસ દેખાય */
+}
+
+.preview-banner-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(360deg, #1a242d 0%, transparent 60%);
+}
+
+/* કન્ટેન્ટ બોડી સ્ટાઈલિંગ */
+.preview-metadata-body {
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.preview-action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.preview-play-btn {
+  background-color: #00b0ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.preview-episodes-count {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.preview-utility-icons {
+  display: flex;
+  gap: 6px;
+  margin-left: auto; /* બટન્સને જમણી બાજુ ધકેલવા માટે */
+}
+
+.util-circle-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.util-circle-btn:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.preview-title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.preview-summary-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* પરફેક્ટ ૨ લાઈન ટેક્સ્ટ લિમિટ */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.preview-genres-list {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-age-tag {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2px 4px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+/* રેસ્પ્રોન્સિવ બ્રેકપોઇન્ટ્સ */
+@media (max-width: 1200px) {
+  .show-card { flex: 0 0 calc(20% - 12px); }
+}
+@media (max-width: 768px) {
+  .show-card { flex: 0 0 calc(33.33% - 10px); }
+  .hover-preview-portal { display: none !important; }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   EDGE FLOW CONTROLS (પહેલા અને છેલ્લા કાર્ડ માટે સ્પેશિયલ પોઝિશન)
+   ========================================================================== */
+
+/* ૧. જો કાર્ડ આખી લાઈનમાં પહેલું (First) હોય, તો તેનું હોવર બોક્સ સ્ક્રીનની ડાબી બોર્ડર સાથે જ ફિક્સ રહેશે */
+.cards-row-container .show-card:first-child .hover-preview-portal {
+  left: 0 !important;
+  transform-origin: left center !important;
+}
+
+/* ૨. જો કાર્ડ આખી લાઈનમાં છેલ્લું (Last) હોય, તો તેને જમણી બાજુ બહાર જવાના બદલે ડાબી બાજુ ધકેલવું */
+.cards-row-container .show-card:last-child .hover-preview-portal {
+  left: auto !important;
+  right: 0 !important;
+  transform-origin: right center !important;
+}
+
+/* ૩. સ્ક્રોલબાર રો (Row) માંથી મોડલ બહાર ન કપાય તે માટે કન્ટેનરને થોડું ઓવરફ્લો સપોર્ટ આપવો */
+.cards-row-container {
+  overflow-x: auto !important;
+  overflow-y: visible !important; /* ઊભી સાઈડ મોડલને ખુલ્લી છૂટ આપશે */
+}

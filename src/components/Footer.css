@@ -1,0 +1,205 @@
+.mx-footer {
+  background-color: #0b0f12; /* ઓરિજિનલ પ્લેયર જેવો ડાર્ક બ્લુઇશ-બ્લેક કલર */
+  color: rgba(255, 255, 255, 0.6);
+  padding: 40px 4%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* આ લાઇન મોબાઇલમાં કૉલમ્સને નીચે ધકેલશે */
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* કૉલમ બેઝ પ્રોપર્ટી */
+.footer-column {
+  flex: 1 1 180px; /* બેઝ વિડ્થ ૧૮૦px રહેશે અને સ્પેસ પ્રમાણે નાની-મોટી થશે */
+}
+
+/* બ્રાન્ડ આઇડેન્ટિટી કૉલમ (આને થોડી વધારે સ્પેસ આપીશું) */
+.brand-info {
+  flex: 2 1 300px;
+}
+
+/* લોગો ડિઝાઇન */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.logo-amazon {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo-mx {
+  color: #00b0ff; /* બ્રાઇટ બ્લુ કલર */
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brand-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 400px;
+}
+
+/* સોશિયલ મીડિયા સેક્શન */
+.social-links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.follow-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 16px;
+  transition: color 0.2s;
+  opacity: 0.8;
+}
+
+.social-icons a:hover {
+  color: #00b0ff;
+  opacity: 1;
+}
+
+/* કૉલમ ટાઇટલ્સ */
+.column-title {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+/* લિંક્સ લિસ્ટ */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* ડાઉનલોડ અને QR કોડ સેક્શન */
+.download-section {
+  flex: 2 1 320px;
+}
+
+.download-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.download-text p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 10px 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.app-stores {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.app-avail-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.store-icons {
+  display: flex;
+  gap: 12px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* QR કોડ કન્ટેનર */
+.qr-code-wrapper {
+  background-color: #ffffff;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qr-img {
+  width: 85px;
+  height: 85px;
+  display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (મોબાઈલ અને ટેબ્લેટ માટે જાદુ)
+   ========================================================================== */
+
+/* ૧. ટેબ્લેટ સ્ક્રીન માટે (૧0૨૪px થી નાની) */
+@media (max-width: 1024px) {
+  .footer-column {
+    flex: 1 1 calc(50% - 20px); /* બે-બે કૉલમ્સ સામસામે સેટ થઈ જશે */
+  }
+  .brand-info, .download-section {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* ૨. પ્યોર મોબાઈલ સ્ક્રીન માટે (૬00px થી નાની) */
+@media (max-width: 600px) {
+  .mx-footer {
+    padding: 30px 20px;
+  }
+  .footer-container {
+    flex-direction: column; /* બધી જ કૉલમ્સ એકની નીચે એક ગોઠવાઈ જશે */
+    gap: 35px;
+  }
+  .footer-column {
+    flex: 1 1 100%;
+  }
+  .download-content {
+    flex-direction: column; /* મોબાઇલમાં QR કોડ લખાણની નીચે આવી જશે */
+    gap: 15px;
+  }
+  .brand-desc {
+    font-size: 12.5px;
+  }
+}
